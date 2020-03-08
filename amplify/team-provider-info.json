@@ -10,6 +10,11 @@
             "StackName": "amplify-quasar-demo-dev-174331",
             "StackId": "arn:aws:cloudformation:us-east-1:552429576165:stack/amplify-quasar-demo-dev-174331/24828e70-6108-11ea-9c5e-12cf2806950f",
             "AmplifyAppId": "d2pr0zbjo2nhqb"
+        },
+        "categories": {
+            "auth": {
+                "quasardemoad2d8957": {}
+            }
         }
     }
 }
