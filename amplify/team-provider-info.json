@@ -14,6 +14,12 @@
         "categories": {
             "auth": {
                 "quasardemoad2d8957": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2pr0zbjo2nhqb",
+                    "type": "cicd"
+                }
             }
         }
     }
