@@ -24,3 +24,9 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+Then adding the Amplify supports.
+
+Resources:
+1. https://medium.com/quasar-framework/creating-a-quasar-framework-application-with-aws-amplify-services-part-1-4-9a795f38e16d
+2. https://medium.com/quasar-framework/creating-a-quasar-framework-application-with-aws-amplify-services-part-2-4-36ce1c79356b
