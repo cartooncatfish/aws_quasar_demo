@@ -7,7 +7,7 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
-      'axios'
+      'axios', 'amplify', 'appsync'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -43,7 +43,27 @@ module.exports = function (ctx) {
       //            (not treeshaking Quasar; biggest bundle size; convenient)
       all: 'auto',
 
-      components: [],
+      components: [
+        'QCircularProgress',
+        'QLayout',
+        'QHeader',
+        'QDrawer',
+        'QPageContainer',
+        'QPage',
+        'QToolbar',
+        'QToolbarTitle',
+        'QBtn',
+        'QIcon',
+        'QList',
+        'QItem',
+        'QItemSection',
+        'QItemLabel',
+        'QInput',
+        'QDate',
+        'QTime',
+        'QPopupProxy',
+        'QCircularProgress'
+      ],
       directives: [],
 
       // Quasar plugins
@@ -66,16 +86,23 @@ module.exports = function (ctx) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
-      extendWebpack (cfg) {
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
+      extendWebpack(cfg) {
+        cfg.module.rules.push(
+          {
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /node_modules/,
+            options: {
+              formatter: require('eslint').CLIEngine.getFormatter('stylish')
+            },
+          },
+          {
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: "javascript/auto"
           }
-        })
+        )
       }
     },
 
@@ -174,7 +201,7 @@ module.exports = function (ctx) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }
