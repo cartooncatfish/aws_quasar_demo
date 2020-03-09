@@ -81,8 +81,8 @@ export default {
   name: 'Todo',
   computed: {
     date () {
-      let timeStamp = Date.now()
-      let formattedString = date.formatDate(timeStamp, 'YYYY-MM-DD')
+      const timeStamp = Date.now()
+      const formattedString = date.formatDate(timeStamp, 'YYYY-MM-DD')
       return formattedString
     }
   },
